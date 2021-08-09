@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Gotham';
+    src: url('/fonts/Gotham-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* :root{
+    font-family: 'Gotham';
+    font-weight: 500;
+    font-style: normal;
+} */
+
+body{
+    background-color: #F8F9FA;
+}
+
+.calculator-main-grid{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto)repeat(5, 100px); /*Esto permite que el numero ingresado pueda expandirse todo lo que sea necesario*/
+}
+
+.calculator-main-grid button {
+    cursor: pointer;
+    font-size: 2rem;
+    border: 1px solid #2B2D42;
+    font-family: 'Gotham';
+    outline: none;
+    background-color: #EDF2F4;
+}
+
+.calculator-main-grid button:hover{
+    background-color: #2B2D42;
+    opacity: 0.5;
+    color: #EDF2F4;
+}
+
+.span-two{
+    grid-column: span 2;
+}
+
+.screen-operand{
+    grid-column: 1/-1;
+    background-color: #212529;
+    /* border: 1px solid #212529; */
+    /* opacity: 0.5; */
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all; /*Permite que si el numero es muy largo, se parta y continue abajo*/
+    font-family: 'Gotham';
+}
+
+.screen-operand .previous-operand{
+    color: #EDF2F4;
+    font-size: 1.5rem;
+}
+
+.screen-operand .current-operand{
+    color: #EDF2F4;
+    font-size: 2.5rem;
+}
