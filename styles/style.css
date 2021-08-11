@@ -19,14 +19,15 @@
 } */
 
 body{
-    background: #F8F9FA;
+    background: #E9ECEF;
+    transition: .3s ease all;
 }
 
 .calculator-main-grid{
     display: grid;
     justify-content: center;
     align-content: center;
-    min-height: 100vh;
+    min-height: 90vh;
     grid-template-columns: repeat(4, 100px);
     grid-template-rows: minmax(120px, auto)repeat(5, 100px); /*Esto permite que el numero ingresado pueda expandirse todo lo que sea necesario*/
 }
@@ -37,12 +38,13 @@ body{
     border: 1px solid #2B2D42;
     font-family: 'Gotham';
     outline: none;
-    background-color: #EDF2F4;
+    background-color: #6C757D;
+    color: #EDF2F4;
 }
 
 .calculator-main-grid button:hover{
-    background-color: #2B2D42;
-    opacity: 0.5;
+    background-color: #495057;
+    /* opacity: 0.5; */
     color: #EDF2F4;
 }
 
@@ -76,6 +78,21 @@ body{
 }
 
 /* Boton DarkMode - Inicio */
+
+.darkbox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    padding-top: 80px;
+}
+
+.darkbox p{
+    font-size: 1rem;
+    font-family: 'Gotham';
+    color: #343D5B;
+}
+
 .switch{ /*Aqui seteo la caja que contiene el sol y la luna*/
     background: #343D5B;
     border-radius: 1000px;
@@ -119,3 +136,37 @@ body{
 /* Boton DarkMode - Fin */
 
 /* DARKMODE */
+body.darkmode{
+    background: #212529;
+}
+
+.darkmode .screen-operand{
+    background-color: #ADB5BD;
+}
+
+.darkmode .screen-operand .previous-operand{
+    color: #212529;
+    font-size: 1.5rem;
+}
+
+.darkmode .screen-operand .current-operand{
+    color: #212529;
+    font-size: 2.5rem;
+}
+
+.darkmode .calculator-main-grid button {
+    border: 1px solid #F8F9FA;
+    background-color: #CED4DA;
+    color: #212529;
+}
+
+.darkmode .calculator-main-grid button:hover{
+    background-color: #495057;
+    color: #EDF2F4;
+}
+
+.darkmode .darkbox p{
+    color: #E9ECEF;
+}
+
+
