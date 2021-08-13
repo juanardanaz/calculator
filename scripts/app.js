@@ -138,13 +138,29 @@ window.onload = () => {
 
     
     
-    // DARKMODE
+    //DARKMODE
     const btnSwitch = document.getElementById('switch');
 
     btnSwitch.addEventListener('click', () =>{
         document.body.classList.toggle('darkmode');
         btnSwitch.classList.toggle('active');
+    
+    //Guardo en localStorage
+    if(document.body.classList.contains('darkmode')) {
+        localStorage.setItem('dark', 'true');
+    } else {
+        localStorage.setItem('dark', 'false');
+    }
     });
+
+    //Obtengo el Modo Actual
+    if(localStorage.getItem('dark') === 'true'){
+        document.body.classList.add('darkmode');
+        btnSwitch.classList.add('active');
+    } else {
+        document.body.classList.remove('darkmode');
+        btnSwitch.classList.remove('active');
+    }
 
 
 
